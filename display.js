@@ -30,6 +30,7 @@ function display(button) {
         displayScreen = (displayScreen.length > 0) ? displayScreen : '0';
         return;
     } else if (button === 'clear') {
+        lastOperation.textContent = ' ';
         displayScreen = '0';
         return;
     } else if (displayScreen === '0') {
@@ -60,9 +61,10 @@ function calculateInput() {
     // clean up decimal places
     finalResult = finalResult.toString();
     if (finalResult.indexOf('.') !== -1) {
-        finalResult = finalResult.substr(finalResult.indexOf('.'), 6);
+        finalResult = finalResult.substring(0, finalResult.indexOf('.')) + finalResult.substr(finalResult.indexOf('.'), 6);
         finalResult = (finalResult.indexOf('.') === 0) ? '0' + finalResult : finalResult;
     }
+    // console.log(finalResult);
     return finalResult;
 }
 

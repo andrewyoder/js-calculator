@@ -1,14 +1,13 @@
 
-function add(x, y=0) {
+function add(x, y) {
     return x + y;
 }
 
-function subtract(x, y=0) {
+function subtract(x, y) {
     return x - y;
 }
 
 function multiply(x, y) {
-    console.log(`${x} * ${y}`);
     return x * y;
 }
 
@@ -20,7 +19,7 @@ function divide(x, y) {
 }
 
 function operate(x, operator, y) {
-    // console.log(`${x} ${operator} ${y}`);
+    console.log(`${x} ${operator} ${y}`);
     switch(operator) {
         case '+':
             return add(+x, +y);
